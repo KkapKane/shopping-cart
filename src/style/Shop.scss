@@ -1,0 +1,24 @@
+.ShopContainer {
+    display: flex;
+    padding: 10%;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    width: 100%;
+    gap: 2rem;
+    
+.itemContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    
+    
+    img {
+        height: 80%;
+        width: 80%;
+         
+    }
+}
+    
+}
