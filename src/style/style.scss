@@ -3,6 +3,8 @@
 }
 
 body,html {
+
+    height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -14,7 +16,7 @@ nav {
     color: white;
     align-items: center;
     gap: 2rem;
-    padding: 0 1rem;
+    padding: 0 2rem;
     height: 4rem;
     
     .site-Title {
@@ -34,3 +36,26 @@ nav {
         gap: 2rem;
     }
 }
+.mainCartContainer {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    .cartContainer {
+        display: flex;
+        height: 20%;    
+        flex-direction: column;
+        
+        .itemContainer {
+            display: flex;
+            height: 50%;
+            width: 50%;
+
+            img{
+                width: 100px;
+             
+            }
+        }
+    }
+}
+
+

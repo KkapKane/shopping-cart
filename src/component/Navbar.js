@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-
+import { AiOutlineShoppingCart} from "react-icons/ai";
 
 export default function Navbar(){
     return (
@@ -12,7 +12,9 @@ export default function Navbar(){
                     <Link to="/shop">Shop</Link>
                 </li>
                 <li>
-                    <Link to="/cart">Cart</Link>
+                    <Link to="/cart">
+                        <AiOutlineShoppingCart/>
+                    </Link>
                 </li>
             </ul>
         </nav>

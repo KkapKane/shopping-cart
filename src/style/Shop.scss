@@ -1,24 +1,50 @@
 .ShopContainer {
     display: flex;
-    padding: 10%;
-    justify-content: space-evenly;
-    border: 2px solid black;
+    gap: 6rem;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 3rem;
     width: 100%;
-    gap: 2rem;
+    
+        
     
 .itemContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    overflow-wrap: break-word;
+    width: 20%;
     align-items: center;
-    border: 2px solid black;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    transition: transform 200ms;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.2);
+        background-color: white;
+    }
     
-    
-    img {
-        height: 80%;
-        width: 80%;
-         
+   img {
+  
+    width: 40%;
+   }
+
+   h6 {
+    text-align: center;
+   }
+   .ratingContainer {
+    display: flex;
+    gap: 1rem;
+       .starCont {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           
+        }
     }
 }
     
+}
+
+.checked {
+    color: orange;
 }
