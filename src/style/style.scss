@@ -40,16 +40,20 @@ nav {
     display: flex;
     flex-direction: column;
     height: 20%;
+
     .cartContainer {
         display: flex;
+
+        padding: 2rem;
         height: 20%;    
         flex-direction: column;
-        
+       
         .itemContainer {
             display: flex;
             height: 50%;
             width: 50%;
-
+            justify-content: space-around;
+            align-items: center;
             img{
                 width: 100px;
              

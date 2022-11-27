@@ -16,7 +16,7 @@ export default function Cart({cart,data, isCart}) {
             return (
               
                 <div key={Math.random()} className="itemContainer"> 
-               
+              
             
                 <Item item={data[c - 1]} isCart={isCart}/>
                 
