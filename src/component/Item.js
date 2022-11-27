@@ -2,11 +2,11 @@ import { AiTwotoneStar} from "react-icons/ai";
 import {useState} from 'react'
 
 
-export default function Item({item,addCart}){
+export default function Item({item,addCart,isCart}){
 
     const [star,setStar] = useState(item.rating.rate)
     return (
-        <div className="itemContainer" onClick={()=>{addCart(item.id)}}>
+        <div className="itemContainer"  onClick={!isCart ? ()=>addCart(item.id) : null} >
             <img src={item.image} alt="" />
             <h6>{item.title}</h6>
             <h6>price: ${item.price} </h6>

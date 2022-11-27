@@ -8,7 +8,10 @@ import Shop from "./component/Shop";
 import axios from 'axios'
 
 function App() {
-  const [cart,setCart] = useState([])
+
+  const [cart,setCart] = useState([
+   
+  ])
 
   const addCart = (id) => {
   
@@ -16,10 +19,21 @@ function App() {
           console.log(cart)
   }
 
-  
+const [isCart,setIsCart] = useState(false)
 const [loading, setLoading] = useState(false);
 const [data,setData] = useState([]);
 
+
+function handleCart(s) {
+  setIsCart(s)
+ 
+  
+}
+
+
+
+
+//fetch api and store data in a state
 useEffect(()=> {
         setLoading(true)
   axios({
@@ -35,11 +49,11 @@ useEffect(()=> {
   return (
     <div className="App">
 
-    <Navbar />
+    <Navbar handleCart={handleCart}/>
     <Routes>
       <Route path="/" element={<HomePage/>} />
-      <Route path="/cart" element={<Cart cart={cart} data={data}/>} />
-      <Route path="/shop" element={<Shop addCart={addCart} loading={loading} data={data}/>} />
+      <Route path="/cart" element={   <Cart cart={cart} data={data} isCart={isCart} handleCart={handleCart}/>} />
+      <Route path="/shop" element={<Shop addCart={addCart} loading={loading} data={data} isCart={isCart} handleCart={handleCart}/>} />
     </Routes>
 
 
