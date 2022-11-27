@@ -9,9 +9,7 @@ import axios from 'axios'
 
 function App() {
 
-  const [cart,setCart] = useState([
-   
-  ])
+  const [cart,setCart] = useState([])
 
   const addCart = (id) => {
   
@@ -49,7 +47,7 @@ useEffect(()=> {
   return (
     <div className="App">
 
-    <Navbar handleCart={handleCart}/>
+    <Navbar handleCart={handleCart} cart={cart}/>
     <Routes>
       <Route path="/" element={<HomePage/>} />
       <Route path="/cart" element={   <Cart cart={cart} data={data} isCart={isCart} handleCart={handleCart}/>} />

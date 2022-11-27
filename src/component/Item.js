@@ -2,14 +2,19 @@ import { AiTwotoneStar } from "react-icons/ai";
 import { useState } from 'react'
 
 
-export default function Item({ item, addCart, isCart }) {
+export default function Item({ item, addCart, isCart,cart }) {
+    
+    //find duplicates
+    function countInArray(array, value) {
+        return array.reduce((n, x) => n + (x === value), 0);
+      }
 
     const [star, setStar] = useState(item.rating.rate)
     return (
         <div
             style={isCart ? { border: ' 2px solid black' } : {}}
             className="itemContainer"
-            onClick={!isCart ? () => addCart(item.id) : null}  >
+            onClick={!isCart ? () => addCart(item) : null}  >
 
 
             <img src={item.image} alt="" />
@@ -25,7 +30,7 @@ export default function Item({ item, addCart, isCart }) {
                     {Math.round(star) >= 5 ? <AiTwotoneStar style={{ color: '#F6BE00' }} /> : <AiTwotoneStar />}
                 </div>
                 <h6>{Math.round(item.rating.count)}</h6>
-                <h5>quantity</h5>
+                {isCart ? <h5>quantity {countInArray(cart, item)}</h5> : null}
             </div>
 
         </div>
