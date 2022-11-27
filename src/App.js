@@ -13,8 +13,10 @@ function App() {
 
   const addCart = (id) => {
   
-          setCart([...cart, id])
-          console.log(cart)
+          setCart([...cart, id ])
+          
+     
+          
   }
 
 const [isCart,setIsCart] = useState(false)
@@ -50,7 +52,7 @@ useEffect(()=> {
     <Navbar handleCart={handleCart} cart={cart}/>
     <Routes>
       <Route path="/" element={<HomePage/>} />
-      <Route path="/cart" element={   <Cart cart={cart} data={data} isCart={isCart} handleCart={handleCart}/>} />
+      <Route path="/cart" element={   <Cart cart={cart} data={data} isCart={isCart} handleCart={handleCart} addCart={addCart} setCart={setCart}/>} />
       <Route path="/shop" element={<Shop addCart={addCart} loading={loading} data={data} isCart={isCart} handleCart={handleCart}/>} />
     </Routes>
 

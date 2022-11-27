@@ -50,13 +50,40 @@ nav {
        
         .itemContainer {
             display: flex;
-            height: 50%;
-            width: 50%;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
+
+            .ratingContainer {
+                display: none;
+            }
             img{
+                margin: 2rem;
                 width: 100px;
              
+            }
+            .priceAndQauntity {
+                display: flex;
+                flex: 0 0 auto;
+                width: 80%;
+                text-align: center;
+                word-wrap: break-word;
+                align-items: center;
+                justify-content: space-around;
+               
+                .ArrowUp{
+                    cursor: pointer;
+                }
+                .ArrowDown {
+                    cursor: pointer;
+                }
+            
+                
+                h4 {
+                    inline-size: 40%;
+                }
+                h6 {
+                    font-size: 1.3rem;
+                }
             }
         }
     }

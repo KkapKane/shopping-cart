@@ -1,8 +1,8 @@
 import Item from "./Item"
-import {useState} from 'react'
+import { v4 as uuidv4 } from 'uuid';
+import {useState} from 'react';
 
-
-export default function Cart({cart,data, isCart}) {
+export default function Cart({cart,data, isCart, addCart, setCart}) {
 
 
   const uniqueItem = cart.filter((e, i, a) => a.indexOf(e) === i)
@@ -11,7 +11,9 @@ export default function Cart({cart,data, isCart}) {
       return p + c.price
   }, 0)
 
-  
+ 
+
+
     return (
         <div className="mainCartContainer">
        
@@ -24,10 +26,10 @@ export default function Cart({cart,data, isCart}) {
            
             return (
              
-                <div key={Math.random()} className="itemContainer"> 
+                <div key={Math.random()} className="itemContainer1"> 
 
             
-                <Item item={c} isCart={isCart} cart={cart}/>
+                <Item item={c} isCart={isCart} cart={cart} addCart={addCart} setCart={setCart} />
                 
                 </div>
             )

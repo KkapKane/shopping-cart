@@ -1,16 +1,29 @@
 import { AiTwotoneStar } from "react-icons/ai";
+import {MdArrowDropDown,MdArrowDropUp } from "react-icons/md";
+import { v4 as uuidv4 } from 'uuid';
+
 import { useState } from 'react'
 
 
-export default function Item({ item, addCart, isCart,cart }) {
-    
+export default function Item({ item, addCart, isCart, cart, setCart }) {
+
     //find duplicates
     function countInArray(array, value) {
         return array.reduce((n, x) => n + (x === value), 0);
-      }
+    }
 
+     function removeItem(whichitem){
+        const newArr = cart.filter((items) => items.uuid !== whichitem);
+        setCart(newArr)
+        console.log('test')
+       
+     }   
+
+     
     const [star, setStar] = useState(item.rating.rate)
+
     return (
+
         <div
             style={isCart ? { border: ' 2px solid black' } : {}}
             className="itemContainer"
@@ -19,7 +32,7 @@ export default function Item({ item, addCart, isCart,cart }) {
 
             <img src={item.image} alt="" />
             <h6>{item.title}</h6>
-            <h6>price: ${item.price} </h6>
+
 
             <div className="ratingContainer">
                 <div className="starCont">
@@ -30,7 +43,16 @@ export default function Item({ item, addCart, isCart,cart }) {
                     {Math.round(star) >= 5 ? <AiTwotoneStar style={{ color: '#F6BE00' }} /> : <AiTwotoneStar />}
                 </div>
                 <h6>{Math.round(item.rating.count)}</h6>
+            </div>
+            <div className="priceAndQauntity">
+                {isCart ? <div className="arrowContainer">
+                   <button onClick={()=> addCart(item)}> <MdArrowDropUp className="ArrowUp" /> </button>
                 {isCart ? <h5>quantity {countInArray(cart, item)}</h5> : null}
+                    <button onClick={()=> removeItem(item.uuid)}><MdArrowDropDown className="ArrowDown"/> </button>
+                </div> : null}
+                {isCart ? <h4>{item.description}</h4> : null}
+                <h6>price: ${item.price} </h6>
+
             </div>
 
         </div>
