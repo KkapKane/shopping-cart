@@ -17,7 +17,7 @@ export default function Cart({cart,data, isCart, addCart, setCart}) {
     return (
         <div className="mainCartContainer">
        
-          
+          <div className="yourCart">Your Cart</div>
           
           
           {cart.length > 0 ? 
@@ -35,7 +35,13 @@ export default function Cart({cart,data, isCart, addCart, setCart}) {
             )
           })}</div > : 'cart is empty'}
          
-        {cart.length > 0 ? <div className="total">TOTAL: ${Math.round(total * 100) / 100} </div> : null}
+        {cart.length > 0 ? <div className="checkout">
+          <div className="total">
+          TOTAL: ${Math.round(total * 100) / 100}
+          </div>
+          
+          <button>Check out</button>
+         </div> : null}
         </div>
         
     )

@@ -38,7 +38,7 @@ useEffect(()=> {
         setLoading(true)
   axios({
         method: "GET",
-        url: "https://fakestoreapi.com/products"})
+        url: "https://fakestoreapi.com/products?sort=clothing"})
         .then(res => {
                 console.log(res.data)
                 setData(res.data)
