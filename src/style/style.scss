@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
 * {
     box-sizing: border-box;
 }
 
-body,html {
+body,
+html {
+    font-family: 'Roboto';
 
-    height: 100vh;
     margin: 0;
     padding: 0;
+
+    border: 3px solid black;
+
 }
 
 nav {
@@ -18,10 +26,11 @@ nav {
     gap: 2rem;
     padding: 0 2rem;
     height: 4rem;
-    
+
     .site-Title {
         font-size: 2rem;
     }
+
     a {
         text-decoration: none;
         color: inherit;
@@ -36,23 +45,25 @@ nav {
         gap: 2rem;
     }
 }
+
 .mainCartContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: space-between;
+
     align-items: center;
 
     .yourCart {
         font-size: 2rem;
     }
+
     .cartContainer {
         display: flex;
 
         padding: 2rem;
-        height: 20%;    
+        height: 20%;
         flex-direction: column;
-       
+
         .itemContainer {
             display: flex;
             justify-content: space-between;
@@ -61,11 +72,13 @@ nav {
             .ratingContainer {
                 display: none;
             }
-            img{
+
+            img {
                 margin: 2rem;
                 width: 100px;
-             
+
             }
+
             .priceAndQauntity {
                 display: flex;
                 flex: 0 0 auto;
@@ -74,18 +87,20 @@ nav {
                 word-wrap: break-word;
                 align-items: center;
                 justify-content: space-around;
-               
-                .ArrowUp{
+
+                .ArrowUp {
                     cursor: pointer;
                 }
+
                 .ArrowDown {
                     cursor: pointer;
                 }
-            
-                
+
+
                 h4 {
                     inline-size: 40%;
                 }
+
                 h6 {
                     font-size: 1.3rem;
                 }
@@ -93,17 +108,124 @@ nav {
         }
     }
 
-    .checkout{
+}
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+
+
+    font-size: 2rem;
+
+
+
+    button {
+        background-color: rgb(229, 187, 35);
+    }
+}
+
+.homepageContainer {
+    display: flex;
+    flex: 0;
+
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    .slogan {
+        font-size: 5rem;
+        text-align: right;
+    }
+
+
+    .carousel {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: end;
-        padding: 3rem;
+        overflow: hidden;
 
-        font-size: 2rem;
-     
-        height: 20vh;
+        height: 100vh;
+        justify-content: space-between;
+
+        flex-grow: 0;
+
+
+
+    }
+
+    .imageContainer {
+        padding: 1rem;
+        display: flex;
+        width: 200%;
+        overflow: hidden;
+        gap: 2rem;
+        left: 0px;
+
+
+        .firstSet {
+            display: flex;
+            gap: 2rem;
+
+            justify-content: space-around;
+            animation: marquee 120s linear infinite;
+        }
+
+
+
+        img {
+
+            padding: 5px;
+            height: 100%;
+            width: 100%;
+            border: 5px solid black;
+        }
+
+
+    }
+
+    .imageContainer2 {
+        display: flex;
+        width: 200%;
+
+        overflow: hidden;
+        gap: 2rem;
+        left: 0px;
+
+
+        img {
+
+            height: 40%;
+
+            padding: 5px;
+            border: 5px solid black;
+        }
+
+        .secondSet {
+            display: flex;
+
+            flex: 0;
+            gap: 2rem;
+            animation: reversemarquee 100s linear infinite;
+        }
     }
 }
 
 
+@keyframes marquee {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes reversemarquee {
+    0% {
+        transform: translateX(-100%)
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}

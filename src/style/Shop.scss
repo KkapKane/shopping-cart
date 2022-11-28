@@ -5,48 +5,50 @@
     height: 100%;
     padding: 3rem;
     width: 100%;
-    
-        
-    
-.itemContainer {
-    display: flex;
-    flex-direction: column;
-    overflow-wrap: break-word;
-    width: 20%;
-    align-items: center;
-    justify-content: space-between;
 
 
-    cursor: pointer;
-   
-   
-    
-   img {
-  
-    width: 40%;
-   }
 
-   h6 {
-    text-align: center;
-   }
-   .ratingContainer {
-    display: flex;
-    gap: 1rem;
-       .starCont {
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           
+    .itemContainer {
+        display: flex;
+        flex-direction: column;
+        overflow-wrap: break-word;
+        width: 20%;
+        align-items: center;
+        justify-content: space-between;
+
+
+        cursor: pointer;
+
+
+
+        img {
+
+            width: 40%;
+        }
+
+        h6 {
+            text-align: center;
+        }
+
+        .ratingContainer {
+            display: flex;
+            gap: 1rem;
+
+            .starCont {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+
+        button {
+            font-size: 1rem;
+            height: 2rem;
+            width: 100%;
         }
     }
 
-    button {
-        font-size: 1rem;
-        height: 2rem;
-        width: 100%;
-    }
-}
-    
 }
 
 .checked {
