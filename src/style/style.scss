@@ -199,7 +199,7 @@ nav {
     .imageContainer {
         display: flex;
         flex: 0 0 30%;
-        width: 200%;
+        width: 245%;
         overflow: hidden;
         gap: 2rem;
         left: 0px;
@@ -212,6 +212,7 @@ nav {
         }
 
         img {
+            
             padding: 5px;
             border: 5px solid black;
         }
@@ -221,7 +222,7 @@ nav {
     .imageContainer2 {
         display: flex;
         flex: 0 0 50%;
-        width: 200%;
+        width: 278%;
         overflow: hidden;
         gap: 2rem;
         left: 0px;
