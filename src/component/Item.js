@@ -2,7 +2,6 @@ import { AiTwotoneStar } from "react-icons/ai";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { useState } from 'react'
 
-
 export default function Item({ item, addCart, isCart, cart, setCart }) {
 
     //find duplicates
@@ -15,7 +14,6 @@ export default function Item({ item, addCart, isCart, cart, setCart }) {
         const index = newArr.findIndex((element) => element === item)
         if (index !== -1) {
             newArr.splice(index, 1)
-
             setCart(newArr)
         }
     }
@@ -23,12 +21,13 @@ export default function Item({ item, addCart, isCart, cart, setCart }) {
     const [star, setStar] = useState(item.rating.rate)
 
     return (
+        <div className="itemContainer">
+            <img src={item.image} alt={item.title} />
 
-        <div
-            style={isCart ? { border: ' 2px solid black' } : {}} className="itemContainer">
-            <img src={item.image} alt="" />
-            <h6>{item.title}</h6>
-
+            <div className="text">
+                <h6>{item.title}</h6>
+                {isCart ? <h4>{item.description}</h4> : null}
+            </div>
 
             <div className="ratingContainer">
                 <div className="starCont">
@@ -40,18 +39,14 @@ export default function Item({ item, addCart, isCart, cart, setCart }) {
                 </div>
                 <h6>{Math.round(item.rating.count)}</h6>
             </div>
-            <div className="priceAndQauntity">
+
+            <div className="priceAndQuantity">
                 {isCart ? <div className="arrowContainer">
-
                     <button onClick={() => addCart(item)}> <MdArrowDropUp className="ArrowUp" /> </button>
-
-                    {isCart ? <h5>quantity {countInArray(cart, item)}</h5> : null}
-
+                    {isCart ? <h5>Qty: {countInArray(cart, item)}</h5> : null}
                     <button onClick={() => removeItem(cart, item)}><MdArrowDropDown className="ArrowDown" /> </button></div> : null}
 
-                {isCart ? <h4>{item.description}</h4> : null}
-
-                {isCart ? <h6>price: ${Math.round((item.price * countInArray(cart, item)) * 100) / 100} </h6> : <h6>price: ${item.price} </h6>}
+                {isCart ? <h6>${(Math.round((item.price * countInArray(cart, item)) * 100) / 100).toFixed(2)} </h6> : <h6>${(item.price).toFixed(2)} </h6>}
             </div>
 
             {!isCart ? <button onClick={() => addCart(item)}>Add to Cart</button> : null}

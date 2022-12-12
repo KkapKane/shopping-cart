@@ -1,51 +1,72 @@
 .ShopContainer {
     display: flex;
-    gap: 6rem;
+    gap: 30px;
     flex-wrap: wrap;
-    height: 100%;
-    padding: 3rem;
-    width: 100%;
-
-
+    max-width: 100vw;
+    margin: 2rem;
 
     .itemContainer {
         display: flex;
         flex-direction: column;
-        overflow-wrap: break-word;
-        width: 20%;
-        align-items: center;
         justify-content: space-between;
-
-
-        cursor: pointer;
-
-
+        word-break: break-word;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        width: 25%;
+        min-width: 250px;
+        padding: 15px;
+        align-items: center;
+        border: 5px solid transparent;
+        border-image: linear-gradient(to bottom right, #3EECAC 0%, #EE74E1 100%);
+        border-image-slice: 1;
 
         img {
-
-            width: 40%;
+            height: 125px;
         }
 
         h6 {
+            margin: 5px 0;
+            font-size: 1rem;
             text-align: center;
         }
 
         .ratingContainer {
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
 
             .starCont {
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                gap: 3px;
+            }
 
+            h6 {
+                background-color: #ccc;
+                padding: 4px 8px;
+                font-size: 0.8rem;
+                border-radius: 6px;
             }
         }
 
         button {
             font-size: 1rem;
-            height: 2rem;
-            width: 100%;
+            width: max-content;
+            padding: 7px 15px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 5px solid black;
+
+            &:hover {
+                background-color: white;
+                color: black;
+                transition: 200ms;
+            }
         }
     }
 

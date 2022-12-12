@@ -1,13 +1,9 @@
-
-
-
-function HomePage() {
+export default function HomePage() {
     return (
         <div className="homepageContainer">
             <div className="slogan">BRIGHTEN UP YOUR <br/>CLOSET TODAY</div>
          <div className="carousel">
-
-
+            
         <div className="imageContainer" >
             <div className="firstSet">
                 <img src="https://images.pexels.com/photos/6626999/pexels-photo-6626999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
@@ -34,6 +30,7 @@ function HomePage() {
                 <img src="https://images.pexels.com/photos/2853592/pexels-photo-2853592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
             </div>
             </div>
+
             <div className="imageContainer2">
             <div className="secondSet">
             <img src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
@@ -64,5 +61,3 @@ function HomePage() {
         </div>
     )
 }
-
-export default HomePage

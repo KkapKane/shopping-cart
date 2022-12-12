@@ -13,7 +13,7 @@ export default function Navbar({ handleCart, cart }) {
                     <Link to="/cart" onClick={() => handleCart(true)} >
                         <div className="cartIconContainer" style={{ display: 'flex' }}>
                             <AiOutlineShoppingCart />
-                            {cart.length > 0 ? <div style={{ color: 'orangered' }}>{cart.length}</div> : null}
+                            {cart.length > 0 ? <div style={{ color: '#66dd98' }}>{cart.length}</div> : null}
                         </div>
                     </Link>
                 </li>
